@@ -1,2 +1,4 @@
 xmsg.egg-info/
 build/
+dist/
+*.pyc

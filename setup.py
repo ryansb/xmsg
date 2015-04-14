@@ -27,5 +27,6 @@ setup(name='xmsg',
       tests_require=[],
       entry_points="""
       [console_scripts]
+      xmsg=xmsg:run
       """,
       )

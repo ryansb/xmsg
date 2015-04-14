@@ -16,9 +16,11 @@ def notification(title, message, icon_url, link):
                       '-appIcon', icon_url,
                       '-open', link])
 
-# Yield messages as they're available from a generator
-for name, endpoint, topic, msg in fedmsg.tail_messages():
-    notification(fedmsg.meta.msg2title(msg, **config),
-                 fedmsg.meta.msg2subtitle(msg, **config),
-                 fedmsg.meta.msg2secondary_icon(msg, **config),
-                 fedmsg.meta.msg2link(msg, **config))
+
+def run():
+    # Yield messages as they're available from a generator
+    for name, endpoint, topic, msg in fedmsg.tail_messages():
+        notification(fedmsg.meta.msg2title(msg, **config),
+                     fedmsg.meta.msg2subtitle(msg, **config),
+                     fedmsg.meta.msg2secondary_icon(msg, **config),
+                     fedmsg.meta.msg2link(msg, **config))
